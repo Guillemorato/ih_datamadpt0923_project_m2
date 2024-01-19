@@ -2,28 +2,8 @@
 
 # __ih_datamadpt0923_project_m2__
 
-![Image](https://github.com/ih-datapt-mad/ih_datamadpt0923_project_m2/blob/main/images/visuals.jpg)
+This repository contains CSV files containing tennis statistics collected from various sources. These data are provided for the purpose of analysis and exploration in the field of tennis.
 
-Data analytics is oftentimes referred to as business intelligence, BI development, or product analytics. However, that is just the tip of the iceberg since the data analytics process includes activities such as data formation/creation, data cleansing, exploratory data analysis (especially this part), feature engineering, and interpretation of suggestions/predictions/results derived from advanced modelling analysis (i.e.: Machine Learning).
-
-For this project you will perform some of these activities in order to analyse a __dataset of your interest__.
-
-
----
-
-
-
-## **Deliverables:**
-
-A GitHub repository including:
-
-- A `data model` showing the table schemas and relations between them. You may use an application such as [DBdiagram](https://dbdiagram.io/).
-
-- A `functional design mockup` where the dashboard parts and functionalities must be represented. This document should be an starting point, meaning that the final product can be different. You may use any tool you want, however, it is highly recommended to use _ink and paper_!!!
-
-- A `BI Report/Dashboard` meeting the requeriments specified in __Challenge 1__. If you use __Tableau__ you need to include the _Tableau Public link_ to the reporting app. If you use __Power BI__ you need to include the `.pbix` file in your repo. 
-
-- A `README.md` file explaining the job done, the reporting app architecture and your main conclusions after the exploratory data analysis. You may find more info of how to build a README file [here](https://github.com/potacho/data-project-template/blob/master/README.md).
 
 
 
@@ -31,16 +11,97 @@ A GitHub repository including:
 
 
 
-## **Presentation:**
-
-- __Time:__ 5 minutes __sharp__.
-
-- __Content:__ eventhough the perfect report/dashboard should be selfexplanatory, you'll need to explain the reporting architecture and show its funtionalities. Also, you'll need to give actionable insights about your data and support your arguments using the report.
-
-<p align="center"><img src="https://media.giphy.com/media/1Ygis29YXMS35cW90I/giphy.gif"></p>
+## **Dataset Files:**
 
 
-> __IMPORTANT NOTE:__ You only need your BI Report/Dashboard for the presentation (i.e.: no Jupyter, no PowerPoint/Canva)
+* Many of the columns in the 'matches' files are self-explanatory, or are very similar to previous columns.
+
+tourney_id
+- a unique identifier for each tournament, such as 2020-888. The exact formats are borrowed from several different sources, so while the first four characters are always the year, the rest of the ID doesn't follow a predictable structure.
+
+tourney_name
+surface
+draw_size
+- number of players in the draw, often rounded up to the nearest power of 2. (For instance, a tournament with 28 players may be shown as 32.)
+
+tourney_level
+- For men: 'G' = Grand Slams, 'M' = Masters 1000s, 'A' = other tour-level events, 'C' = Challengers, 'S' = Satellites/ITFs, 'F' = Tour finals and other season-ending events, and 'D' = Davis Cup 
+
+tourney_date
+- eight digits, YYYYMMDD, usually the Monday of the tournament week.
+
+match_num
+- a match-specific identifier. Often starting from 1, sometimes counting down from 300, and sometimes arbitrary. 
+
+winner_id
+- the player_id used in this repo for the winner of the match
+
+winner_seed
+winner_entry
+- 'WC' = wild card, 'Q' = qualifier, 'LL' = lucky loser, 'PR' = protected ranking, 'ITF' = ITF entry, and there are a few others that are occasionally used.
+
+winner_name
+winner_hand
+- R = right, L = left, U = unknown. For ambidextrous players, this is their serving hand.
+winner_ht
+- height in centimeters, where available
+
+winner_ioc
+- three-character country code
+
+winner_age
+- age, in years, as of the tourney_date
+
+loser_id
+loser_seed
+loser_entry
+loser_name
+loser_hand
+loser_ht
+loser_ioc
+loser_age
+score
+best_of
+- '3' or '5', indicating the the number of sets for this match
+
+round
+minutes
+- match length, where available
+w_ace
+- winner's number of aces
+w_df
+- winner's number of doubles faults
+w_svpt
+- winner's number of serve points
+w_1stIn
+- winner's number of first serves made
+w_1stWon
+- winner's number of first-serve points won
+w_2ndWon
+- winner's number of second-serve points won
+w_SvGms
+- winner's number of serve games
+w_bpSaved
+- winner's number of break points saved
+w_bpFaced
+- winner's number of break points faced
+``````
+l_ace 
+l_df
+l_svpt
+l_1stIn
+l_1stWon
+l_2ndWon
+l_SvGms
+l_bpSaved
+l_bpFaced
+``````
+winner_rank
+- winner's ATP or WTA rank, as of the tourney_date, or the most recent ranking date before the tourney_date
+winner_rank_points
+- number of ranking points, where available
+loser_rank
+loser_rank_points
 
 
 
@@ -48,23 +109,12 @@ A GitHub repository including:
 
 
 
-## __Challenge 1: BI Report/Dashboard__
+## Usage
 
-BI Reports and Dashboards are powerful tools for communicating important information __at-a-glance__. The goal of this challenge is to build a BI Report/Dashboard using a dataset of your choice. Bear in mind the __purpose__ of the report and build a __normalized__ model that fits your visualization requeriments and interactivity performance.
-
-You may use either __Tableau__ or __Power BI__ as your main tool for creating your reporting app. There are not restictions about the data source location or format (local drive, database, multiformat, etc.).
-
-> __Tip:__ you should first consider which data and which indicators should be put on the BI Report/Dashboard. Then, decompose the key indicators from multiple dimensions. 
-
-<p align="center"><img src="https://media.giphy.com/media/l46Cy1rHbQ92uuLXa/giphy.gif"></p>
-
-
-A BI Report/Dashboard is not exactly a sequential set of descriptive charts. Instead, a BI Report/Dashboard should be __a single interactive interface built around a specific objetive and which components are logically arranged in order to provide data relevant insights effectively__.
-
+These CSV files are intended for use in tennis-related data analysis. You can import them into tools like pandas in Python or use them in data analysis environments like Excel or Power BI.
 
 
 ---
-
 
 
 ## **References:**
